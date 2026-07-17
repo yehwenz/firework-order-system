@@ -1,0 +1,71 @@
+/* ---------------------------------------------------------------------
+   蓬蓬煙火 Pom Pom Fireworks — 全域樣式
+   Display: Noto Serif TC（節慶感、筆畫有重量）
+   Body:    Noto Sans TC（清晰易讀）
+--------------------------------------------------------------------- */
+
+:root {
+  --font-display: 'Noto Serif TC', serif;
+  --font-body: 'Noto Sans TC', sans-serif;
+}
+
+html, body {
+  font-family: var(--font-body);
+  background: #FBF3E7;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display) !important;
+  letter-spacing: 0.02em;
+}
+
+/* 大量圓角是本產品的核心語彙：卡片、按鈕、輸入框一致採用大圓角 */
+.v-card, .v-sheet, .v-btn, .v-chip, .v-text-field .v-field, .v-select .v-field {
+  border-radius: 20px;
+}
+.v-btn {
+  border-radius: 999px !important;
+}
+
+/* ---------------------------------------------------------------------
+   簽名元素：火花軌跡分隔線 (spark-trail)
+   以漸層圓點模擬煙火升空的軌跡，用於區塊分隔、頁首裝飾、狀態進度條
+--------------------------------------------------------------------- */
+.spark-trail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 8px;
+  margin: 8px 0;
+}
+.spark-trail span {
+  display: inline-block;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F4A94E, #E8734A);
+}
+.spark-trail span:nth-child(1) { width: 4px; height: 4px; opacity: 0.35; }
+.spark-trail span:nth-child(2) { width: 6px; height: 6px; opacity: 0.55; }
+.spark-trail span:nth-child(3) { width: 8px; height: 8px; opacity: 0.75; }
+.spark-trail span:nth-child(4) { width: 10px; height: 10px; opacity: 1; }
+.spark-trail span:nth-child(5) { width: 6px; height: 6px; opacity: 0.6; }
+
+/* 綻放徽章：用於分類 icon 底、品牌 logo 底 */
+.burst-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FDC98B, #E8734A 70%);
+  box-shadow: 0 6px 16px rgba(232, 115, 74, 0.35);
+}
+
+/* 空狀態插畫容器 */
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  color: #8A7361;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #E4D4BE; border-radius: 999px; }
